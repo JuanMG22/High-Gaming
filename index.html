@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de productos</title>
+    <!--Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Fonts Awesone -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">HIGH GAMING</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Acerca</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success btn-light" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Hardware PC</h1>
+    <h2>Procesadores AMD</h2>
+
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="row">
+            <div class="card mx-5 pt-3 shadow" style="width: 18rem;">
+                <img src="./img/cpu-1.jpg" class="card-img-top" alt="AMD Ryzen">
+                <div class="card-body d-grid">
+                    <h5 class="card-title my-2">Procesador AMD RYZEN 5 2600 3.90GHz </h5>
+                    <h5 class="card-subtitle my-2"> $27.030 </h5>
+                    <p class="card-text">Procesador AMD 6 Núcleos 12 Hilos</p>
+                    <button class="btn btn-dark" onclick="agregarCpu(`AMD Ryzen 5 2600`,27030)">Comprar</button>
+                </div>
+            </div>
+            <div class="card mx-5 pt-3 shadow" style="width: 18rem;">
+                <img src="./img/cpu-2.jpg" class="card-img-top" alt="AMD Ryzen">
+                <div class="card-body d-grid">
+                    <h5 class="card-title my-2">Procesador AMD Ryzen 5 3500X 4.1GHz </h5>
+                    <h5 class="card-subtitle my-2"> $28.930 </h5>
+                    <p class="card-text">Procesador AMD 6 Núcleos 6 Hilos</p>
+                    <button class="btn btn-dark" onclick="agregarCpu(`AMD Ryzen 5 3500X`,28930)">Comprar</button>
+                </div>
+            </div>
+            <div class="card mx-5 pt-3 shadow" style="width: 18rem;">
+                <img src="./img/cpu-3.jpg" class="card-img-top" alt="AMD Ryzen">
+                <div class="card-body d-grid">
+                    <h5 class="card-title my-2">Procesador AMD Ryzen 9 5950X 4.9GHz </h5>
+                    <h5 class="card-subtitle my-2"> $90.3330 </h5>
+                    <p class="card-text">Procesador AMD 16 Núcleos 32 Hilos</p>
+                    <button class="btn btn-dark" onclick="agregarCpu(`AMD Ryzen 5 5950X`, 90330)">Comprar</button>
+                </div>
+            </div>
+            <div class="card mx-5 pt-3 shadow" style="width: 18rem;">
+                <img src="./img/cpu-4.jpg" class="card-img-top" alt="AMD Ryzen">
+                <div class="card-body d-grid">
+                    <h5 class="card-title my-2">Procesador AMD RYZEN 9 3950X 4.7GHz </h5>
+                    <h5 class="card-subtitle my-2"> $115.780 </h5>
+                    <p class="card-text">Procesador AMD 16 Núcleos 32 Hilos</p>
+                    <button class="btn btn-dark" onclick="agregarCpu(`AMD Ryzen 5 3950X`, 115730)">Comprar</button>                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row col-12">
+        <div class="d-flex justify-content-center">
+                <button onclick="mostrarCarrito()" class="btn btn-success my-5 mx-2 col-2"><i class="fas fa-shopping-cart mx-2"></i>Mostrar Carrito</button>
+                <button onclick="limpiarCarrito()"  class="btn btn-secondary my-5 mx-2 col-2"><i class="fas fa-times"></i>  Limpiar Carrito</button>
+            </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <!-- JavaScript -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
