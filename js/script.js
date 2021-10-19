@@ -28,6 +28,7 @@ function mostrarCarrito() {
 // Funcio que vacia el carrito por medio de un splice
 function limpiarCarrito() {
     largoPrecios = precios.length; //Hallo el largo del array precios
+    console.clear();
     alert(`Se vacio el carrito`);
     return precios.splice(0, largoPrecios);
 }
