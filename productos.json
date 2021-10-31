@@ -1,0 +1,26 @@
+[
+  {
+    "precio": 27030,
+    "id": 1,
+    "title": "Procesador AMD RYZEN 5 2600",
+    "thumbnailUrl": "./cpu-1.jpg"
+  },
+  {
+    "precio": 28930,
+    "id": 2,
+    "title": "Procesador AMD Ryzen 5 3500X ",
+    "thumbnailUrl": "./cpu-2.jpg"
+  },
+  {
+    "precio": 90330,
+    "id": 3,
+    "title": "Procesador AMD Ryzen 9 5950X",
+    "thumbnailUrl": "./cpu-3.jpg"
+  },
+  {
+    "precio": 115780,
+    "id": 4,
+    "title": "Procesador AMD RYZEN 9 3950X",
+    "thumbnailUrl": "./cpu-4.jpg"
+  }
+]
