@@ -1,0 +1,30 @@
+[
+  {
+    "precio": 27030,
+    "id": 1,
+    "titulo": "Procesador AMD Ryzen 5 2600",
+    "descripcion": "Procesador AMD 6 Núcleos 12 Hilos",
+    "imagen": "./img/cpu-1.jpg"
+  },
+  {
+    "precio": 28930,
+    "id": 2,
+    "titulo": "Procesador AMD Ryzen 5 3500X ",
+    "descripcion": "Procesador AMD 6 Núcleos 6 Hilos",
+    "imagen": "./img/cpu-2.jpg"
+  },
+  {
+    "precio": 90330,
+    "id": 3,
+    "titulo": "Procesador AMD Ryzen 9 5950X",
+    "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
+    "imagen": "./img/cpu-3.jpg"
+  },
+  {
+    "precio": 115780,
+    "id": 4,
+    "titulo": "Procesador AMD Ryzen 9 3950X",
+    "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
+    "imagen": "./img/cpu-4.jpg"
+  }
+]
