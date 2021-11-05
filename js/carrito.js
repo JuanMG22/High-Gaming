@@ -7,6 +7,7 @@ const templateFooter = document.querySelector(`#template-footer`).content;
 const fragment = document.createDocumentFragment();
 let carrito = {};
 
+// Se utiliza fetch pora accdeder a productos.json
 document.addEventListener(`DOMContentLoaded`, () => {
     fetchData();
     if (localStorage.getItem(`carrito`)) {
@@ -26,7 +27,7 @@ items.addEventListener(`click`, e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch(`productos.json`);
+        const res = await fetch('productos.json')
         const data = await res.json();
         mostrarCards(data)
     } catch (error) {
@@ -34,6 +35,7 @@ const fetchData = async () => {
     }
 }
 
+// Función que muestra las cards con los productos disponibles
 const mostrarCards = data => {
     data.forEach(producto => {
         templateCard.querySelector(`.card-title`).textContent = producto.titulo;
