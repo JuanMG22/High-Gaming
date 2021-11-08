@@ -51,9 +51,10 @@
     <h2>Procesadores AMD</h2>
   </div>
   <div class="container-fluid">
-    <div class="row col-12" id="card-productos">
-      <template id="template-card">
-        <div class="col 3">
+    <!-- Productos -->
+    <div class="row" id="card-productos">
+      <template  id="template-card">
+        <div class="col 3 ">
           <div class="card mx-3 my-3 pt-3 px-2 shadow">
             <img src="" alt="Procesador AMD" class="card-img-top">
             <div class="card-body">
@@ -67,10 +68,10 @@
       </template>
     </div>
   
-
+<!-- Carrito de compras -->
   <template id="template-carrito">
     <tr>
-      <th scope="row">id</th>
+      <th id="id" scope="row">id</th>
       <td>Producto</td>
       <td>1</td>
       <td>
@@ -120,6 +121,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
+  <!-- jQuery -->
+  <script src="./js/jquery.min.js"></script>
   <!-- JavaScript -->
   <script src="./js/carrito.js"></script>
 </body>

@@ -8,30 +8,31 @@ const fragment = document.createDocumentFragment();
 let carrito = {};
 
 // Se utiliza fetch pora accdeder a productos.json
-document.addEventListener(`DOMContentLoaded`, () => {
+$(() => {
     fetchData();
     if (localStorage.getItem(`carrito`)) {
-        carrito = JSON.parse(localStorage.getItem(`carrito`))
-        mostrarCarrito()
+        carrito = JSON.parse(localStorage.getItem(`carrito`));
+        mostrarCarrito();
     }
-})
+});
 
-cardProductos.addEventListener(`click`, e => {
+$('#card-productos').click( e => {
     addCarrito(e);
-})
+});
 
 
-items.addEventListener(`click`, e => {
+$('#items').click( e => {
     btnAccion(e);
-})
+});
+
 
 const fetchData = async () => {
     try {
-        const res = await fetch('productos.json')
+        const res = await fetch('productos.json');
         const data = await res.json();
-        mostrarCards(data)
+        mostrarCards(data);
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
@@ -44,9 +45,9 @@ const mostrarCards = data => {
         templateCard.querySelector(`.card-img-top`).setAttribute("src", producto.imagen);
         templateCard.querySelector(`.btn-dark`).dataset.id = producto.id;
         const clone = templateCard.cloneNode(true);
-        fragment.appendChild(clone);
+        fragment.append(clone);
     });
-    cardProductos.appendChild(fragment);
+    cardProductos.append(fragment);
 }
 
 
@@ -75,7 +76,7 @@ const setCarrito = objeto => {
 
 // Función que pinta el carrito
 const mostrarCarrito = () => {
-    items.innerHTML = ``;
+     $('#items').html('');
     Object.values(carrito).forEach(producto => {
         templateCarrito.querySelector(`th`).textContent = producto.id;
         templateCarrito.querySelectorAll(`td`)[0].textContent = producto.titulo;
@@ -85,10 +86,10 @@ const mostrarCarrito = () => {
         templateCarrito.querySelector(`span`).textContent = producto.cantidad * producto.precio;
 
         const clone = templateCarrito.cloneNode(true);
-        fragment.appendChild(clone);
+        fragment.append(clone);
     });
 
-    items.appendChild(fragment);
+    items.append(fragment);
     mostrarFooter();
 
     localStorage.setItem(`carrito`, JSON.stringify(carrito));
@@ -96,11 +97,11 @@ const mostrarCarrito = () => {
 
 
 const mostrarFooter = () => {
-    footer.innerHTML = ``;
+    $('#footer').html('');
     if (Object.keys(carrito).length === 0) {
-        footer.innerHTML = `
+        $('#footer').html(`
         <th scope="row" colspan="5">Carrito vacío</th>
-        `
+        `);
         return
     }
 
@@ -111,38 +112,39 @@ const mostrarFooter = () => {
     templateFooter.querySelector(`span`).textContent = nPrecio;
 
     const clone = templateFooter.cloneNode(true);
-    fragment.appendChild(clone);
-    footer.appendChild(fragment);
+    fragment.append(clone);
+    footer.append(fragment);
 
     vaciarCarrito();
 }
 
 // Funcion que vacia carrito
 const vaciarCarrito = () => {
-    const btnVaciar = document.querySelector(`#vaciar-carrito`);
-    btnVaciar.addEventListener(`click`, () => {
+
+    $('#vaciar-carrito').click( () => {
         carrito = {};
         mostrarCarrito();
-    })
+    });
+
 }
 
 
 const btnAccion = e => {
     // Acccion de sumar un producto
     if (e.target.classList.contains(`btn-sumar`)) {
-        const producto = carrito[e.target.dataset.id]
-        producto.cantidad++
-        carrito[e.target.dataset.id] = {...producto}
-        mostrarCarrito()
+        const producto = carrito[e.target.dataset.id];
+        producto.cantidad++;
+        carrito[e.target.dataset.id] = {...producto};
+        mostrarCarrito();
     }
     // Acccion de restar un producto
     if (e.target.classList.contains(`btn-restar`)) {
-        const producto = carrito[e.target.dataset.id]
-        producto.cantidad--
+        const producto = carrito[e.target.dataset.id];
+        producto.cantidad--;
         if (producto.cantidad === 0) {
-            delete carrito[e.target.dataset.id]
+            delete carrito[e.target.dataset.id];
         }
-        mostrarCarrito()
+        mostrarCarrito();
     }
 
     e.stopPropagation();
