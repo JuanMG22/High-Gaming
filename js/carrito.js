@@ -14,6 +14,14 @@ $(() => {
         carrito = JSON.parse(localStorage.getItem(`carrito`));
         mostrarCarrito();
     }
+
+    $('#card-productos').fadeIn(1000);
+});
+
+// Animcaion al hacer click en boton comprar
+$("#card-productos").click(function() {
+    $(".btn-dark").animate({ fontSize: "120%" }, 250 );
+    $(".btn-dark").animate({ fontSize: "100%" }, 250 );
 });
 
 $('#card-productos').click( e => {
@@ -84,7 +92,8 @@ const mostrarCarrito = () => {
         templateCarrito.querySelector(`.btn-sumar`).dataset.id = producto.id; //btn agregar producto
         templateCarrito.querySelector(`.btn-restar`).dataset.id = producto.id; //btn quitar producto
         templateCarrito.querySelector(`span`).textContent = producto.cantidad * producto.precio;
-
+        $('.table').fadeIn(500);
+        
         const clone = templateCarrito.cloneNode(true);
         fragment.append(clone);
     });
@@ -124,6 +133,8 @@ const vaciarCarrito = () => {
     $('#vaciar-carrito').click( () => {
         carrito = {};
         mostrarCarrito();
+        // Animacion al vaciar el carrito
+        $('.table').fadeOut(500);
     });
 
 }
