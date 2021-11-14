@@ -1,0 +1,62 @@
+// Contact Section
+
+.contact {
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+
+    &__heading {
+        color: $negro-texto;
+        font-weight: 600;
+        margin-bottom: 5rem;
+        &--span {
+            border-bottom: $borde-negro;
+            padding-bottom: $padding-titulo;
+            font-size: 250%;
+        }
+
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: left;
+        width: 60%;
+        margin: 0 auto;
+
+        &--nombre,
+        &--email,
+        &--pais,
+        &--textarea {
+            margin: 0.625rem 0rem;
+            width: 100%;
+            padding: 0.313rem;
+            resize: none;
+            color: $blanco-texto;
+
+            &:focus {
+                outline: $borde-blanco;
+            }
+        }
+
+        &--newsletter-box {
+            display: flex;
+            align-items: center;
+        }
+
+        &--newsletter {
+            margin: 0.625rem 0.313rem 0.625rem 0.625rem;
+        }
+
+        &--enviar {
+            background: linear-gradient(rgba(46, 51, 209, 0.8), rgba(46, 51, 209, 1));
+            transition: ease all .3s;
+
+            &:hover {
+                color: $blanco;
+                background: linear-gradient(rgba(46, 51, 209, 1), rgba(46, 51, 209, 1));
+            }
+        }
+    }
+}

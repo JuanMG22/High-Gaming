@@ -7,6 +7,9 @@ const templateFooter = document.querySelector(`#template-footer`).content;
 const fragment = document.createDocumentFragment();
 let carrito = {};
 
+
+
+
 // Se utiliza fetch pora accdeder a productos.json
 $(() => {
     fetchData();
@@ -19,17 +22,21 @@ $(() => {
 });
 
 // Animcaion al hacer click en boton comprar
-$("#card-productos").click(function() {
-    $(".btn-dark").animate({ fontSize: "120%" }, 250 );
-    $(".btn-dark").animate({ fontSize: "100%" }, 250 );
+$("#card-productos").click(function () {
+    $(".btn-dark").animate({
+        fontSize: "120%"
+    }, 250);
+    $(".btn-dark").animate({
+        fontSize: "100%"
+    }, 250);
 });
 
-$('#card-productos').click( e => {
+$('#card-productos').click(e => {
     addCarrito(e);
 });
 
 
-$('#items').click( e => {
+$('#items').click(e => {
     btnAccion(e);
 });
 
@@ -78,13 +85,15 @@ const setCarrito = objeto => {
         producto.cantidad = carrito[producto.id].cantidad + 1;
     }
 
-    carrito[producto.id] = {...producto};
+    carrito[producto.id] = {
+        ...producto
+    };
     mostrarCarrito();
 }
 
 // Función que pinta el carrito
 const mostrarCarrito = () => {
-     $('#items').html('');
+    $('#items').html('');
     Object.values(carrito).forEach(producto => {
         templateCarrito.querySelector(`th`).textContent = producto.id;
         templateCarrito.querySelectorAll(`td`)[0].textContent = producto.titulo;
@@ -93,7 +102,7 @@ const mostrarCarrito = () => {
         templateCarrito.querySelector(`.btn-restar`).dataset.id = producto.id; //btn quitar producto
         templateCarrito.querySelector(`span`).textContent = producto.cantidad * producto.precio;
         $('.table').fadeIn(500);
-        
+
         const clone = templateCarrito.cloneNode(true);
         fragment.append(clone);
     });
@@ -114,8 +123,13 @@ const mostrarFooter = () => {
         return
     }
 
-    const nCantidad = Object.values(carrito).reduce((acumulado, {cantidad}) => acumulado + cantidad, 0);
-    const nPrecio = Object.values(carrito).reduce((acumulado, {cantidad, precio}) => acumulado + cantidad * precio, 0);
+    const nCantidad = Object.values(carrito).reduce((acumulado, {
+        cantidad
+    }) => acumulado + cantidad, 0);
+    const nPrecio = Object.values(carrito).reduce((acumulado, {
+        cantidad,
+        precio
+    }) => acumulado + cantidad * precio, 0);
 
     templateFooter.querySelectorAll(`td`)[0].textContent = nCantidad;
     templateFooter.querySelector(`span`).textContent = nPrecio;
@@ -130,7 +144,7 @@ const mostrarFooter = () => {
 // Funcion que vacia carrito
 const vaciarCarrito = () => {
 
-    $('#vaciar-carrito').click( () => {
+    $('#vaciar-carrito').click(() => {
         carrito = {};
         mostrarCarrito();
         // Animacion al vaciar el carrito
@@ -145,7 +159,9 @@ const btnAccion = e => {
     if (e.target.classList.contains(`btn-sumar`)) {
         const producto = carrito[e.target.dataset.id];
         producto.cantidad++;
-        carrito[e.target.dataset.id] = {...producto};
+        carrito[e.target.dataset.id] = {
+            ...producto
+        };
         mostrarCarrito();
     }
     // Acccion de restar un producto
