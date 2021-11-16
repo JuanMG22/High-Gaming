@@ -21,16 +21,6 @@ $(() => {
     $('#card-productos').fadeIn(1000);
 });
 
-// Animcaion al hacer click en boton comprar
-$("#card-productos").click(function () {
-    $(".btn-dark").animate({
-        fontSize: "120%"
-    }, 250);
-    $(".btn-dark").animate({
-        fontSize: "100%"
-    }, 250);
-});
-
 $('#card-productos').click(e => {
     addCarrito(e);
 });
@@ -94,10 +84,12 @@ const setCarrito = objeto => {
 // Función que pinta el carrito
 const mostrarCarrito = () => {
     $('#items').html('');
+    $('#nav-carrito').html('0');
     Object.values(carrito).forEach(producto => {
         templateCarrito.querySelector(`th`).textContent = producto.id;
         templateCarrito.querySelectorAll(`td`)[0].textContent = producto.titulo;
         templateCarrito.querySelectorAll(`td`)[1].textContent = producto.cantidad;
+        document.querySelector(`#nav-carrito`).textContent = producto.cantidad;
         templateCarrito.querySelector(`.btn-sumar`).dataset.id = producto.id; //btn agregar producto
         templateCarrito.querySelector(`.btn-restar`).dataset.id = producto.id; //btn quitar producto
         templateCarrito.querySelector(`span`).textContent = producto.cantidad * producto.precio;
@@ -132,6 +124,7 @@ const mostrarFooter = () => {
     }) => acumulado + cantidad * precio, 0);
 
     templateFooter.querySelectorAll(`td`)[0].textContent = nCantidad;
+    document.querySelector(`#nav-carrito`).textContent = nCantidad;
     templateFooter.querySelector(`span`).textContent = nPrecio;
 
     const clone = templateFooter.cloneNode(true);

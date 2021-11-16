@@ -1,0 +1,82 @@
+@import "./variables";
+
+// Footer
+.pie {
+    background-color: rgba(14, 14, 14, 0.9);
+    border-top: $borde-blanco-2;
+    padding: 1.25rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $sombra-negra;
+
+    &__socialbox {
+        margin-top: 0.625rem;
+        width: 20rem;
+        display: flex;
+        justify-content: space-evenly;
+
+        @include laptop {
+            width: 15rem;
+        }
+
+        &--social-icon {
+            font-size: 150%;
+            transition: all ease .3s;
+            &:hover {
+                color: $blanco-texto;
+                transform: scale(1.15);
+            }
+
+            @include laptop {
+                font-size: 185%;
+            }
+
+            @include tablet {
+                font-size: 220%;
+            }
+        }
+
+    }
+
+    &__logo {
+        margin: 1rem 0rem;
+        height: 3.125rem;
+        filter: invert(100%);
+
+        @include tablet {
+            height: 3rem;
+        }
+    }
+
+    &__parrafo {
+        margin: 1rem 0rem;
+        &--texto {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+            color: $blanco-texto;
+            font-family: 'Staatliches', cursive;
+            font-size: 70%;
+            letter-spacing: 1px;
+
+            @include laptop {
+                font-size: 75%;
+            }
+            @include tablet {
+                font-size: 90%;
+            }
+        }
+
+        &--link {
+            color: $blanco-texto;
+            transition: all ease .3s;
+            &:hover {
+                color: $amarillo;
+                transform: scale(1.2);
+            }
+        }
+    }
+}

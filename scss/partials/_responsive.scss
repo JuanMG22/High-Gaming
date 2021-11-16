@@ -1,0 +1,31 @@
+// Media Queries
+@mixin laptop-l {
+    @media all and (max-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media all and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media all and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile-l {
+    @media all and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media all and (max-width: 375px) {
+        @content;
+    }
+}
+

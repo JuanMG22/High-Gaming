@@ -27,4 +27,36 @@
     "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
     "imagen": "./img/cpu-4.jpg"
   }
+  ,
+  {
+    "precio": 115780,
+    "id": 5,
+    "titulo": "Procesador Intel Core I9-11900k",
+    "descripcion": "Procesador Intel 8 Núcleos 16 Hilos",
+    "imagen": "./img/cpu-5.jpg"
+  }
+  ,
+  {
+    "precio": 115780,
+    "id": 6,
+    "titulo": "Procesador AMD Ryzen 9 3950X",
+    "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
+    "imagen": "./img/cpu-4.jpg"
+  }
+  ,
+  {
+    "precio": 115780,
+    "id": 7,
+    "titulo": "Procesador AMD Ryzen 9 3950X",
+    "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
+    "imagen": "./img/cpu-4.jpg"
+  }
+  ,
+  {
+    "precio": 115780,
+    "id": 8,
+    "titulo": "Procesador AMD Ryzen 9 3950X",
+    "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
+    "imagen": "./img/cpu-4.jpg"
+  }
 ]

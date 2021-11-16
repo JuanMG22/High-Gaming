@@ -1,0 +1,80 @@
+@mixin container-section($height: 81vh) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 7rem 0rem 3.075rem 0rem;
+    min-height: $height;
+}
+
+@mixin borde-h2 {
+    border-bottom: $borde-blanco;
+    padding-bottom: $padding-titulo;
+}
+
+@mixin box-sections($width: 70vw) {
+    background-color: rgba(20, 20, 20, .9);
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    width: $width;
+    padding: 1.25rem;
+    border: $borde-negro;
+    box-shadow: $sombra-negra;
+    animation: zoomInUp;
+    animation-duration: .8s;
+}
+
+@mixin filtro-elementos {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: ease height .3s;
+}
+
+@mixin text-link($top, $left) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    font-size: 135%;
+    opacity: 0;
+    visibility: hidden;
+    color: $blanco-texto;
+    transition: all ease .3s;
+    &:hover {
+        color: $amarillo;
+    }
+}
+
+@mixin efecto-text-link {
+    &--figure:hover>&--text-box .gear__box--text-link {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &--figure:hover>&--text-box .gear__box--text-link-pickups {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &--figure:hover>&--text-box .gear__box--text-link-pedals {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &--figure:hover>&--text-box .gear__box--text-link-pedals-xl {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &--figure:hover>&--text-box .gear__box--text {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@mixin gear-items($width, $height) {
+    margin: 1.875rem 0.625rem 1.25rem 0rem;
+    width: $width;
+    height: $height;
+    transition: ease all .3s;
+}

@@ -1,25 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import "./variables";
+@import "./responsive";
+
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto',
+    sans-serif;
+}
+
+body {
+    background: $blanco;
+    background-position: center;
+    color: $negro-texto;
+    text-rendering: optimizeLegibility;
     font-size: 16px;
+
+    @include laptop-l {
+        font-size: 14px;
+    }
+
+    @include laptop {
+        font-size: 12px;
+    }
+
+    @include tablet {
+        font-size: 10px;
+
+        p,
+        label {
+            font-size: 14px;
+        }
+    }
 }
 
 h1 {
-    font-weight: bold;
-    font-size: 180%;
-    text-align: center;
+    display: none;
 }
 
 h2 {
-    font-weight: bold;
-    font-size: 150%;
-    margin: 1rem 0rem;
-    text-align: center;
+    font-size: 200%;
+    font-weight: 600;
+    color: $blanco;
 }
 
-.icon-carrito {
+p {
+    font-family: 'Roboto',
+    sans-serif;
+    color: $blanco-texto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+li {
+    list-style: none;
+    font-weight: 700;
+    
+}
+
+a {
+    text-decoration: none;
+    color: $blanco;
+}
+
+// Buttons
+
+.btn {
     font-size: 120%;
-    background: #141414;
-    padding: 5px 10px;
+    padding: 0.625rem 1.875rem;
+    margin: 0rem 0rem;
+    border-radius: $borde-redondeado;
+    animation: bounceIn;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+
+.btn-full {
+    background: none;
+    box-shadow: $sombra-negra;
+    color: $blanco;
+    transition: ease all .3s;
+
+    &:hover,
+    &:active {
+        background-color: $blanco;
+        color: $negro;
+    }
 }
