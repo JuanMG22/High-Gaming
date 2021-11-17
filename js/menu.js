@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/****************Menu Hamburguesa *****************/
+/****************Menu Hamburguesa ***********/
 
 // variables de las lineas que componen el icono del boton
 const linea1 = document.querySelector(`.header__navegacion--linea-1`);
@@ -24,16 +24,6 @@ const navMenu = document.querySelector(`.header__navegacion--menu`);
 btnBurger.addEventListener(`click`, () => {
     // Al detectar click del boton llamo funcion abrirCerrarMenu
     abrirCerrarMenu();
-});
-
-
-// Fix en caso de presionar Contacto o logo en el index
-const btnLogo = document.querySelector(`#btn-logo`);
-
-
-btnLogo.addEventListener(`mouseup`, () => {
-    // Al detectar click del boton llamo funcion cierraMenu
-    cerrarMenu();
 });
 
 //Función abre/cierra menu agregando y quitando clases

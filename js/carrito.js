@@ -93,7 +93,6 @@ const mostrarCarrito = () => {
         templateCarrito.querySelector(`.btn-sumar`).dataset.id = producto.id; //btn agregar producto
         templateCarrito.querySelector(`.btn-restar`).dataset.id = producto.id; //btn quitar producto
         templateCarrito.querySelector(`span`).textContent = producto.cantidad * producto.precio;
-        $('.table').fadeIn(500);
 
         const clone = templateCarrito.cloneNode(true);
         fragment.append(clone);
