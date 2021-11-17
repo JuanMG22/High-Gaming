@@ -4,7 +4,6 @@
     border-top: $borde-blanco-2;
     text-align: center;
     padding-bottom: 9.375rem;
-    background-image: linear-gradient(rgba(45, 45, 45, 0.8), rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.8));
     background-position: center;
     background-size: cover;
     min-height: 76.9vh;
@@ -16,9 +15,11 @@
     &__heading {
         margin-top: $margin-titulo;
         margin-bottom: 6.25rem;
+        color: $negro;
 
         &--span {
-            @include borde-h2;
+            border-bottom: 1px solid $negro;
+            padding-bottom: $padding-titulo;
         }
 
         @include mobile-l {

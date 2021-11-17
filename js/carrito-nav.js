@@ -1,3 +1,5 @@
+
+
 const mostrarCarrito = () => {
     $('#nav-carrito').html('0');
 
@@ -5,20 +7,7 @@ const mostrarCarrito = () => {
         cantidad
     }) => acumulado + cantidad, 0);
     
-    Object.values(carrito).forEach(producto => {
-        document.querySelector(`#nav-carrito`).textContent = producto.cantidad;
-    });
-
-    if (carrito.hasOwnProperty(producto.id)) {
-        producto.cantidad = carrito[producto.id].cantidad + 1;
-    }
-
-    carrito[producto.id] = {
-        ...producto
-    };
-
-    
-
+    document.querySelector(`#nav-carrito`).textContent = nCantidad;
 }
 
 
