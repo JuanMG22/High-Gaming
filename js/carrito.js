@@ -48,7 +48,7 @@ const mostrarCards = data => {
         templateCard.querySelector(`.precio-producto`).textContent = producto.precio;
         templateCard.querySelector(`.card-text`).textContent = producto.descripcion;
         templateCard.querySelector(`.card-img-top`).setAttribute("src", producto.imagen);
-        templateCard.querySelector(`.btn-dark`).dataset.id = producto.id;
+        templateCard.querySelector(`.btn-comprar`).dataset.id = producto.id;
         const clone = templateCard.cloneNode(true);
         fragment.append(clone);
     });
@@ -57,15 +57,23 @@ const mostrarCards = data => {
 
 
 const addCarrito = e => {
-    if (e.target.classList.contains(`btn-dark`)) {
+    if (e.target.classList.contains(`btn-comprar`)) {
         setCarrito(e.target.parentElement);
+        Swal.fire({
+            toast: true,
+            position: 'bottom-end',
+            icon: 'success',
+            title: 'Se agregó el producto',
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     e.stopPropagation();
 }
 
 const setCarrito = objeto => {
     const producto = {
-        id: objeto.querySelector(`.btn-dark`).dataset.id,
+        id: objeto.querySelector(`.btn-comprar`).dataset.id,
         titulo: objeto.querySelector(`.card-title`).textContent,
         precio: objeto.querySelector(`.precio-producto`).textContent,
         cantidad: 1
