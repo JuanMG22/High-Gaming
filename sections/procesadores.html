@@ -40,41 +40,98 @@
               </li>
               <li class="header__navegacion--item-menu">
                       <a class="header__navegacion--link-menu"
-                          href="./productos.html">Productos</a>
+                          href="../sections/productos.html">Productos</a>
               </li>
               <li class="header__navegacion--item-menu"><a class="header__navegacion--link-menu"
-                      href="./contacto.html">Contacto</a></li>
-              <a class="header__navegacion--item-menu btn btn-full mx-3 w-100 align-self-center" href="carrito.html">
+                      href="../sections/contacto.html">Contacto</a></li>
+              <a class="header__navegacion--item-menu btn btn-full mx-3 w-100 align-self-center" href="../sections/carrito.html">
                   <i class=" fas fa-shopping-cart"></i> <span id="nav-carrito">0</span>
               </a>
           </ul>
         </nav>
     </header>
 
-  <div class="container">
-    <h1 class="d-none">High Gaming</h1>
+  <div class="container pt-5">
+    <h1>High Gaming</h1>
+    <h2 class="mt-5 text-center text-dark">Procesadores</h2>
+    <div class="container-fluid my-3">
+      <div class="col-9 mx-auto">
+        <a href="./productos.html" class="btn btn-outline-dark">Todo</a>
+        <a href="./procesadores.html" class="btn btn-outline-dark">Procesadores</a>
+        <a href="./placasvideo.html" class="btn btn-outline-dark">Placas de video</a>
+        <a href="./motherboards.html" class="btn btn-outline-dark" >Motherboards</a>
+        <a href="./memorias.html" class="btn btn-outline-dark" >Memorias</a>
+        <a href="./fuentes.html" class="btn btn-outline-dark" id="btn-fuente">Fuentes de alimentación</a>
+        <a href="./gabinetes.html" class="btn btn-outline-dark" id="btn-gabinete">Gabinetes</a>
+      </div>
+    </div>
   </div>
+  <div class="container-fluid">
+    <!-- Productos -->
+    <div class="row" id="card-productos" style="display: none;">
+      <template  id="template-card" >
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <div class="card mx-3 my-3 pt-3 px-2 shadow">
+            <img src="" alt="Producto Hardware" class="card-img-top h-25">
+            <div class="card-body">
+              <h5 class="card-title my-2">Titulo</h5>
+              <h5 class="card-subtitle my-2">$ <span class="precio-producto"></span></h5>
+              <p class="card-text">Descripcion</p>
+              <button class="btn btn-outline-dark btn-comprar w-100">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  
+<!-- Carrito de compras -->
+  <template id="template-carrito" style="display: none;">
+    <tr>
+      <th id="id" scope="row">id</th>
+      <td>Producto</td>
+      <td>1</td>
+      <td>
+        <button class="btn btn-success btn-sm btn-sumar">
+          Agregar
+        </button>
+        <button class="btn btn-danger btn-sm btn-restar">
+          Eliminar
+        </button>
+      </td>
+      <td>$ <span></span></td>
+    </tr>
+  </template>
 
-  <section class="contact" id="contact-section">
-            <h2 class="contact__heading">
-                Contacto
-            </h2>
-            <form class="contact__form" method="POST" id="formulario">
-                <label class="contact__form--label" for="nombre">Nombre
+  <template id="template-footer" style="display: none;">
+    <th scope="row" colspan="2">Total productos</th>
+    <td>10</td>
+    <td>
+      <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+        <i class="fas fa-times"></i>
+        Limpiar Carrito
+      </button>
+    </td>
+    <td class="font-weight-bold">$ <span>5000</span></td>
+  </template>
 
-                  <input class="contact__form--nombre" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                </label>
-                <label class="contact__form--label" for="email">Email
-
-                  <input class="contact__form--email" id="email" type="email" name="email" placeholder="Tu email" required>
-                </label>
-                <label for="comentarios">Dejanos un mensaje</label>
-                <textarea class="contact__form--textarea" id="comentarios" name="consulta" rows="10" cols="40"
-                    placeholder="Tu mensaje"></textarea>
-
-                <input class="contact__form--enviar btn btn-dark" type="submit" value="Enviar!" id="enviar">
-            </form>
-    </section>
+  <table class="table table-dark table-striped table-hover" style="display: none;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Acción</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody id="items"></tbody>
+        <tfoot>
+          <tr id="footer">
+            <th scope="row" colspan="5">Carrito Vacio</th>
+          </tr>
+        </tfoot>
+      </table>
+  </div>
 
   <!-- Footer -->
   <footer class="pie">
@@ -91,15 +148,17 @@
     </div>
     <div class="pie__parrafo">
       <p class="pie__parrafo--texto">Website designed & devoloped by <a class="pie__parrafo--link" target="_blank" href="https://www.linkedin.com/in/juan-manuel-gonzalez-041576218/"><strong>Juan Manuel González</strong></a></p>
-      <p class="pie__parrafo--texto">&copy; Copyright 2021 High gaming</p>
+      <p class="pie__parrafo--texto">&copy; Copyright 2021 High Gaming</p>
     </div>
   </footer>
-  
+
   <!-- jQuery -->
   <script src="../js/jquery.min.js"></script>
+  <!-- Sweet Alert -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- JavaScript -->
   <script src="../js/menu.js"></script>
-  <script src="../js/carrito-nav.js"></script>
+  <script src="../js/procesadores.js"></script>
 </body>
 
 </html>

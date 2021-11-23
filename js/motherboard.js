@@ -12,7 +12,7 @@ let carrito = {};
 
 // Se utiliza fetch pora accdeder a productos.json
 $(() => {
-    fetchData();
+    fetchData("motherboard");
     if (localStorage.getItem(`carrito`)) {
         carrito = JSON.parse(localStorage.getItem(`carrito`));
         mostrarCarrito();
@@ -31,11 +31,12 @@ $('#items').click(e => {
 });
 
 
-const fetchData = async () => {
+const fetchData = async (categoriaTexto) => {
     try {
         const res = await fetch('productos.json');
         const data = await res.json();
-        mostrarCards(data);
+        const categoria = data.filter(producto => producto.categoria === categoriaTexto)
+        mostrarCards(categoria);
         
     } catch (error) {
         console.log(error);
@@ -43,8 +44,8 @@ const fetchData = async () => {
 }
 
 // Función que muestra las cards con los productos disponibles
-const mostrarCards = data => {
-    data.forEach(producto => {
+const mostrarCards = categoria => {
+    categoria.forEach(producto => {
         templateCard.querySelector(`.card-title`).textContent = producto.titulo;
         templateCard.querySelector(`.precio-producto`).textContent = producto.precio;
         templateCard.querySelector(`.card-text`).textContent = producto.descripcion;
@@ -148,6 +149,8 @@ const vaciarCarrito = () => {
     $('#vaciar-carrito').click(() => {
         carrito = {};
         mostrarCarrito();
+        // Animacion al vaciar el carrito
+        $('.table').fadeOut(500);
     });
 
 }

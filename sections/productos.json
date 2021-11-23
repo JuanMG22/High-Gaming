@@ -3,188 +3,212 @@
     "precio": 27030,
     "id": 1,
     "titulo": "Procesador AMD Ryzen 5 2600",
+    "categoria": "ProcesadoresAMD",
     "descripcion": "Procesador AMD 6 Núcleos 12 Hilos",
-    "imagen": "./img/cpu-1.jpg"
+    "imagen": "../img/cpu-1.jpg"
   },
   {
     "precio": 28930,
     "id": 2,
     "titulo": "Procesador AMD Ryzen 5 3500X ",
+    "categoria": "ProcesadoresAMD",
     "descripcion": "Procesador AMD 6 Núcleos 6 Hilos",
-    "imagen": "./img/cpu-2.jpg"
+    "imagen": "../img/cpu-2.jpg"
   },
   {
     "precio": 90330,
     "id": 3,
     "titulo": "Procesador AMD Ryzen 9 5950X",
+    "categoria": "ProcesadoresAMD",
     "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
-    "imagen": "./img/cpu-3.jpg"
+    "imagen": "../img/cpu-3.jpg"
   },
   {
     "precio": 115780,
     "id": 4,
     "titulo": "Procesador AMD Ryzen 9 3950X",
+    "categoria": "ProcesadoresAMD",
     "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
-    "imagen": "./img/cpu-4.jpg"
+    "imagen": "../img/cpu-4.jpg"
   }
   ,
   {
     "precio": 85500,
     "id": 5,
     "titulo": "Procesador Intel Core I9-11900k",
+    "categoria": "ProcesadoresIntel",
     "descripcion": "Procesador Intel 8 Núcleos 16 Hilos",
-    "imagen": "./img/cpu-5.jpg"
+    "imagen": "../img/cpu-5.jpg"
   }
   ,
   {
     "precio": 66500,
     "id": 6,
     "titulo": "Procesador Intel Core I9-10900k",
+    "categoria": "ProcesadoresIntel",
     "descripcion": "Procesador Intel 10 Núcleos 20 Hilos",
-    "imagen": "./img/cpu-6.jpg"
+    "imagen": "../img/cpu-6.jpg"
   }
   ,
   {
     "precio": 59790,
     "id": 7,
     "titulo": "Procesador Intel Core I7-11700k",
+    "categoria": "ProcesadoresIntel",
     "descripcion": "Procesador Intel 8 Núcleos 16 Hilos",
-    "imagen": "./img/cpu-7.jpg"
+    "imagen": "../img/cpu-7.jpg"
   }
   ,
   {
     "precio": 40910,
     "id": 8,
     "titulo": "Procesador Intel Core I5-11600k",
+    "categoria": "ProcesadoresIntel",
     "descripcion": "Procesador Intel 6 Núcleos 12 Hilos",
-    "imagen": "./img/cpu-8.jpg"
+    "imagen": "../img/cpu-8.jpg"
   }
   ,
   {
     "precio": 670000,
     "id": 9,
     "titulo": "Placa de Video MSI RTX 3090 24GB",
+    "categoria": "gpus",
     "descripcion": "Placa de video Nvidia RTX 3090",
-    "imagen": "./img/gpus/gpu-1.jpg"
+    "imagen": "../img/gpus/gpu-1.jpg"
   }
   ,
   {
     "precio": 425000,
     "id": 10,
     "titulo": "Placa de Video EVGA RTX 3080 TI 12GB",
+    "categoria": "gpus",
     "descripcion": "Placa de video Nvidia RTX 3080 TI",
-    "imagen": "./img/gpus/gpu-2.jpg"
+    "imagen": "../img/gpus/gpu-2.jpg"
   }
   ,
   {
     "precio": 124230,
     "id": 11,
     "titulo": "Placa de Video EVGA GTX 1660 TI 6GB",
+    "categoria": "gpus",
     "descripcion": "Placa de video Nvidia GTX 1660 TI",
-    "imagen": "./img/gpus/gpu-3.jpg"
+    "imagen": "../img/gpus/gpu-3.jpg"
   }
   ,
   {
     "precio": 370000,
     "id": 12,
     "titulo": "Placa de Video Asrock RX 6800 XT 16GB",
+    "categoria": "gpus",
     "descripcion": "Placa de video AMD  RX 6800 XT",
-    "imagen": "./img/gpus/gpu-4.jpg"
+    "imagen": "../img/gpus/gpu-4.jpg"
   }
   ,
   {
     "precio": 220000,
     "id": 13,
     "titulo": "Placa de Video Asrock RX 6700 XT 12GB",
+    "categoria": "gpus",
     "descripcion": "Placa de video AMD  RX 6700 XT",
-    "imagen": "./img/gpus/gpu-5.jpg"
+    "imagen": "../img/gpus/gpu-5.jpg"
   }
   ,
   {
     "precio": 220000,
     "id": 14,
     "titulo": "Placa de Video XFX RX 6600 XT 8GB",
+    "categoria": "gpus",
     "descripcion": "Placa de video AMD  RX 6600 XT",
-    "imagen": "./img/gpus/gpu-6.jpg"
+    "imagen": "../img/gpus/gpu-6.jpg"
   }
   ,
   {
     "precio": 42630,
     "id": 15,
     "titulo": "Motherboard MSI MAG X570S TOMAHAWK",
+    "categoria": "motherboard",
     "descripcion": "Motherboard AM4 MSI X570S",
-    "imagen": "./img/mothers/mother-1.jpg"
+    "imagen": "../img/mothers/mother-1.jpg"
   }
   ,
   {
     "precio": 29750,
     "id": 16,
     "titulo": "Motherboard ASUS ROG STRIX B550-F WI-FI",
+    "categoria": "motherboard",
     "descripcion": "Motherboard AM4 ASUS B550-F",
-    "imagen": "./img/mothers/mother-2.jpg"
+    "imagen": "../img/mothers/mother-2.jpg"
   }
   ,
   {
     "precio": 120000,
     "id": 17,
     "titulo": "Motherboard Gigabyte Z590 Aorus Xtreme",
+    "categoria": "motherboard",
     "descripcion": "Motherboard S1200 Gigabyte Z590",
-    "imagen": "./img/mothers/mother-3.jpg"
+    "imagen": "../img/mothers/mother-3.jpg"
   }
   ,
   {
     "precio": 68320,
     "id": 18,
     "titulo": "Motherboard ASUS Z590 ROG MAXIMUS XIII HERO",
+    "categoria": "motherboard",
     "descripcion": "Motherboard S1200 ASUS Z590 ROG",
-    "imagen": "./img/mothers/mother-4.jpg"
+    "imagen": "../img/mothers/mother-4.jpg"
   }
   ,
   {
     "precio": 35890,
     "id": 19,
     "titulo": "Memoria Team DDR4 64GB (2x32GB) 2666MHz",
+    "categoria": "ram",
     "descripcion": "Memoria Team T-Create DDR4 64GB",
-    "imagen": "./img/ram/ram-1.jpg"
+    "imagen": "../img/ram/ram-1.jpg"
   }
   ,
   {
     "precio": 35890,
     "id": 20,
     "titulo": "Memoria Team DDR4 32GB (2x16GB) 3200MHz Dark Z",
+    "categoria": "ram",
     "descripcion": "Memoria Team Dark Z DDR4 32GB",
-    "imagen": "./img/ram/ram-2.jpg"
+    "imagen": "../img/ram/ram-2.jpg"
   }
   ,
   {
     "precio": 44100,
     "id": 21,
     "titulo": "Fuente ASUS ROG THOR 850P 80 Plus Platinum",
+    "categoria": "fuente",
     "descripcion": "Fuente ASUS ROG 850W 80+ Platinum Full modular",
-    "imagen": "./img/fuentes/fuente-1.jpg"
+    "imagen": "../img/fuentes/fuente-1.jpg"
   }
   ,
   {
     "precio": 52190,
     "id": 22,
     "titulo": "Gabinete ASUS ROG STRIX Helios Aluminum Black RGB",
+    "categoria": "gabinetes",
     "descripcion": "Gabinete ASUS ROG STRIX Helios Aluminum Black RGB",
-    "imagen": "./img/gabinetes/gabinete-1.jpg"
+    "imagen": "../img/gabinetes/gabinete-1.jpg"
   }
   ,
   {
     "precio": 49000,
     "id": 23,
     "titulo": "Gabinete Cooler Master C700P Black Edition E-ATX",
+    "categoria": "gabinetes",
     "descripcion": "Gabinete Cooler Master C700P Vidrio Templado E-ATX",
-    "imagen": "./img/gabinetes/gabinete-2.jpg"
+    "imagen": "../img/gabinetes/gabinete-2.jpg"
   }
   ,
   {
     "precio": 12160,
     "id": 24,
     "titulo": "Gabinete Deepcool MATREXX 55 V3 ADD-RGB",
+    "categoria": "gabinetes",
     "descripcion": "Gabinete Deepcool MATREXX 55 V3 ADD-RGB 3 Fans WH",
-    "imagen": "./img/gabinetes/gabinete-3.jpg"
+    "imagen": "../img/gabinetes/gabinete-3.jpg"
   }
 ]
