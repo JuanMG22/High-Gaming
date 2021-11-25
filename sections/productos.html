@@ -56,13 +56,14 @@
     <h2 class="mt-5 text-center text-dark">Hardware PC</h2>
     <div class="container-fluid my-3">
       <div class="col-9 mx-auto">
-        <a href="./productos.html" class="btn btn-outline-dark">Todo</a>
-        <a href="./procesadores.html" class="btn btn-outline-dark">Procesadores</a>
-        <a href="./placasvideo.html" class="btn btn-outline-dark">Placas de video</a>
-        <a href="./motherboards.html" class="btn btn-outline-dark" >Motherboards</a>
-        <a href="./memorias.html" class="btn btn-outline-dark" >Memorias</a>
-        <a href="./fuentes.html" class="btn btn-outline-dark" id="btn-fuente">Fuentes de alimentación</a>
-        <a href="./gabinetes.html" class="btn btn-outline-dark" id="btn-gabinete">Gabinetes</a>
+        <button class="btn btn-outline-dark" id="btn-todo">Todo</button>
+        <button class="btn btn-outline-dark" id="btn-amd">Procesadores AMD</button>
+        <button class="btn btn-outline-dark" id="btn-intel">Procesadores Intel</button>
+        <button class="btn btn-outline-dark" id="btn-gpu">Placas de video</button>
+        <button class="btn btn-outline-dark" id="btn-motherboard">Motherboards</button>
+        <button class="btn btn-outline-dark" id="btn-ram">Memorias</button>
+        <button class="btn btn-outline-dark" id="btn-fuente">Fuentes de alimentación</button>
+        <button class="btn btn-outline-dark" id="btn-gabinete">Gabinetes</button>
       </div>
     </div>
   </div>
@@ -70,9 +71,9 @@
     <!-- Productos -->
     <div class="row" id="card-productos" style="display: none;">
       <template  id="template-card" >
-        <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="col-xl-3 col-lg-4 col-md-6" id="producto-card">
           <div class="card mx-3 my-3 pt-3 px-2 shadow">
-            <img src="" alt="Producto Hardware" class="card-img-top h-25">
+            <img loading="lazy" src="" alt="Producto Hardware" class="card-img-top h-25">
             <div class="card-body">
               <h5 class="card-title my-2">Titulo</h5>
               <h5 class="card-subtitle my-2">$ <span class="precio-producto"></span></h5>
@@ -158,7 +159,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- JavaScript -->
   <script src="../js/menu.js"></script>
-  <script src="../js/carrito.js"></script>
+  <script src="../js/carrito.js" type="module"></script>
 </body>
 
 </html>

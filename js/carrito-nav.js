@@ -1,6 +1,6 @@
 
 
-const mostrarCarrito = () => {
+const mostrarCarritoNav = () => {
     $('#nav-carrito').html('0');
 
     const nCantidad = Object.values(carrito).reduce((acumulado, {
@@ -13,5 +13,5 @@ const mostrarCarrito = () => {
 
 if (localStorage.getItem(`carrito`)) {
         carrito = JSON.parse(localStorage.getItem(`carrito`));
-        mostrarCarrito();
+        mostrarCarritoNav();
     }

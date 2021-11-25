@@ -18,7 +18,7 @@ $(() => {
         mostrarCarrito();
     }
 
-    $('#card-productos').fadeIn(1000);
+    $('#card-productos').fadeIn(800);
 });
 
 $('#card-productos').click(e => {
@@ -29,6 +29,8 @@ $('#card-productos').click(e => {
 $('#items').click(e => {
     btnAccion(e);
 });
+
+
 
 
 const fetchData = async () => {
@@ -42,6 +44,39 @@ const fetchData = async () => {
     }
 }
 
+$('#btn-amd').click( () => {
+    $('#template-card').removeClass(['mostrarIntel', 'mostrarGPU'])
+    $('#template-card').addClass(`mostrarAMD`)
+});
+
+$('#btn-intel').click( () => {
+    $('#template-card').removeClass(['mostrarAMD', 'mostrarGPU'])
+    $('#template-card').addClass(`mostrarIntel`)
+});
+$('#btn-gpu').click( () => {
+    $('#template-card').removeClass(['mostrarAMD', 'mostrarIntel'])
+    $('#template-card').addClass(`mostrarGPU`)
+});
+$('#btn-motherboard').click( () => {
+    $('#template-card').removeClass(`mostrarAMD`)
+    $('#template-card').addClass(`mostrarIntel`)
+});
+$('#btn-ram').click( () => {
+    $('#template-card').removeClass(`mostrarAMD`)
+    $('#template-card').addClass(`mostrarIntel`)
+});
+$('#btn-fuente').click( () => {
+    $('#template-card').removeClass(`mostrarAMD`)
+    $('#template-card').addClass(`mostrarIntel`)
+});
+$('#btn-gabinete').click( () => {
+    $('#template-card').removeClass(`mostrarAMD`)
+    $('#template-card').addClass(`mostrarIntel`)
+});
+
+
+
+
 // Función que muestra las cards con los productos disponibles
 const mostrarCards = data => {
     data.forEach(producto => {
@@ -50,10 +85,41 @@ const mostrarCards = data => {
         templateCard.querySelector(`.card-text`).textContent = producto.descripcion;
         templateCard.querySelector(`.card-img-top`).setAttribute("src", producto.imagen);
         templateCard.querySelector(`.btn-comprar`).dataset.id = producto.id;
+        templateCard.querySelector(`#producto-card`).classList.add(producto.categoria);
         const clone = templateCard.cloneNode(true);
         fragment.append(clone);
+       
+        filtrasClasesCategoria();
     });
     cardProductos.append(fragment);
+}
+
+const filtrasClasesCategoria = () => {
+     if (
+            templateCard.querySelector(`#producto-card`).classList.contains(`ProcesadoresAMD`) 
+            || 
+            templateCard.querySelector(`#producto-card`).classList.contains(`ProcesadoresIntel`)
+            || 
+            templateCard.querySelector(`#producto-card`).classList.contains(`gpus`)
+            || 
+            templateCard.querySelector(`#producto-card`).classList.contains(`motherboard`)
+            || 
+            templateCard.querySelector(`#producto-card`).classList.contains(`ram`)
+            || 
+            templateCard.querySelector(`#producto-card`).classList.contains(`fuente`)
+            || 
+            templateCard.querySelector(`#producto-card`).classList.contains(`gabinetes`)
+        ) {
+            templateCard.querySelector(`#producto-card`).classList.remove(
+                `ProcesadoresAMD`,
+                `ProcesadoresIntel`,
+                `gpus`,
+                `motherboard`,
+                `ram`,
+                `fuente`,
+                `gabinetes`,
+                );
+        }
 }
 
 
@@ -175,3 +241,5 @@ const btnAccion = e => {
 
     e.stopPropagation();
 }
+
+export { mostrarCards, carrito };

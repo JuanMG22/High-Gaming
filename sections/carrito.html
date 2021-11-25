@@ -17,6 +17,9 @@
 </head>
 
 <body>
+  <!-- Preloader -->
+  <div class="lds-ring loader" id="loader"><div></div><div></div><div></div><div></div></div>
+  <!-- Header y Navbar -->
   <header class="header">
       <nav class="header__navegacion">
           <a href="../index.html">
@@ -51,9 +54,9 @@
     <h1>Hardware PC</h1>
     <h2 class="text-dark text-center my-5">Carrito de Compras</h2>
   </div>
-  <div class="container-fluid" style="min-height: 58.1vh;">
+  <div class="container" style="min-height: 58.1vh;">
     <!-- Productos -->
-    <div class="row" id="card-productos" >
+    <div class="row d-none" id="card-productos" >
       <template  id="template-card">
         <div class="col 3 ">
           <div class="card mx-3 my-3 pt-3 px-2 shadow">
@@ -62,7 +65,7 @@
               <h5 class="card-title my-2">Titulo</h5>
               <h5 class="card-subtitle my-2">$ <span class="precio-producto"></span></h5>
               <p class="card-text">Descripcion</p>
-              <button class="btn btn-dark w-100">Comprar</button>
+              <button class="btn btn-dark w-100 btn-comprar">Comprar</button>
             </div>
           </div>
         </div>
@@ -141,7 +144,7 @@
   <script src="../js/jquery.min.js"></script>
   <!-- JavaScript -->
   <script src="../js/menu.js"></script>
-  <script src="../js/carrito.js"></script>
+  <script src="../js/carrito.js" type="module"></script>
 </body>
 
 </html>
