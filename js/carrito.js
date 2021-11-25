@@ -44,34 +44,38 @@ const fetchData = async () => {
     }
 }
 
+$('#btn-todo').click( () => {
+    $('.ProcesadoresAMD, .ProcesadoresIntel, .gpus, .motherboard, .ram, .fuente, .gabinetes').fadeIn(150);
+});
+
 $('#btn-amd').click( () => {
-    $('#template-card').removeClass(['mostrarIntel', 'mostrarGPU'])
-    $('#template-card').addClass(`mostrarAMD`)
+    $('.ProcesadoresAMD').fadeIn(150);
+    $('.ProcesadoresIntel, .gpus, .motherboard, .ram, .fuente, .gabinetes').fadeOut(150);
 });
 
 $('#btn-intel').click( () => {
-    $('#template-card').removeClass(['mostrarAMD', 'mostrarGPU'])
-    $('#template-card').addClass(`mostrarIntel`)
+    $('.ProcesadoresIntel').fadeIn(150);
+    $('.ProcesadoresAMD, .gpus, .motherboard, .ram, .fuente, .gabinetes').fadeOut(150);
 });
 $('#btn-gpu').click( () => {
-    $('#template-card').removeClass(['mostrarAMD', 'mostrarIntel'])
-    $('#template-card').addClass(`mostrarGPU`)
+    $('.gpus').fadeIn(150);
+    $('.ProcesadoresAMD, .ProcesadoresIntel, .motherboard, .ram, .fuente, .gabinetes').fadeOut(150);
 });
 $('#btn-motherboard').click( () => {
-    $('#template-card').removeClass(`mostrarAMD`)
-    $('#template-card').addClass(`mostrarIntel`)
+    $('.motherboard').fadeIn(150);
+    $('.ProcesadoresAMD, .ProcesadoresIntel, .gpus, .ram, .fuente, .gabinetes').fadeOut(150);
 });
 $('#btn-ram').click( () => {
-    $('#template-card').removeClass(`mostrarAMD`)
-    $('#template-card').addClass(`mostrarIntel`)
+    $('.ram').fadeIn(150);
+    $('.ProcesadoresAMD, .ProcesadoresIntel, .gpus, .motherboard, .fuente, .gabinetes').fadeOut(150);
 });
 $('#btn-fuente').click( () => {
-    $('#template-card').removeClass(`mostrarAMD`)
-    $('#template-card').addClass(`mostrarIntel`)
+    $('.fuente').fadeIn(150);
+    $('.ProcesadoresAMD, .ProcesadoresIntel, .gpus, .motherboard, .ram, .gabinetes').fadeOut(150);
 });
 $('#btn-gabinete').click( () => {
-    $('#template-card').removeClass(`mostrarAMD`)
-    $('#template-card').addClass(`mostrarIntel`)
+    $('.gabinetes').fadeIn(150);
+    $('.ProcesadoresAMD, .ProcesadoresIntel, .gpus, .motherboard, .ram, .fuente').fadeOut(150);
 });
 
 
