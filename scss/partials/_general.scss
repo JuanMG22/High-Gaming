@@ -93,3 +93,18 @@ a {
         color: $negro;
     }
 }
+
+#template-card {
+    overflow: hidden;
+}
+
+.card {
+    transition: ease all .3s;
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+#producto-card {
+    overflow: hidden;
+}

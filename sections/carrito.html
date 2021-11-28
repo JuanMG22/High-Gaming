@@ -58,7 +58,7 @@
     <!-- Productos -->
     <div class="row d-none" id="card-productos" >
       <template  id="template-card">
-        <div class="col 3 ">
+        <div class="col 3" id="producto-card">
           <div class="card mx-3 my-3 pt-3 px-2 shadow">
             <img src="" alt="Procesador AMD" class="card-img-top">
             <div class="card-body">
@@ -94,9 +94,13 @@
     <th scope="row" colspan="2">Total productos</th>
     <td>10</td>
     <td>
-      <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+      <button class="btn btn-outline-light" id="btn-pedido">
+        <i class="fas fa-check-circle"></i>
+        Realizar Pedido
+      </button>
+      <button class="btn btn-outline-light btn-sm" id="vaciar-carrito">
         <i class="fas fa-times"></i>
-        Limpiar Carrito
+        Vaciar Carrito
       </button>
     </td>
     <td class="font-weight-bold">$ <span>5000</span></td>
@@ -142,9 +146,11 @@
 
   <!-- jQuery -->
   <script src="../js/jquery.min.js"></script>
+  <!-- Sweet Alert -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- JavaScript -->
   <script src="../js/menu.js"></script>
-  <script src="../js/carrito.js" type="module"></script>
+  <script src="../js/carrito.js"></script>
 </body>
 
 </html>

@@ -17,8 +17,7 @@ $(() => {
         carrito = JSON.parse(localStorage.getItem(`carrito`));
         mostrarCarrito();
     }
-
-    $('#card-productos').fadeIn(800);
+    $('#card-productos').fadeIn(450);
 });
 
 $('#card-productos').click(e => {
@@ -57,28 +56,31 @@ $('#btn-intel').click( () => {
     $('.ProcesadoresIntel').fadeIn(150);
     $('.ProcesadoresAMD, .gpus, .motherboard, .ram, .fuente, .gabinetes').fadeOut(150);
 });
+
 $('#btn-gpu').click( () => {
     $('.gpus').fadeIn(150);
     $('.ProcesadoresAMD, .ProcesadoresIntel, .motherboard, .ram, .fuente, .gabinetes').fadeOut(150);
 });
+
 $('#btn-motherboard').click( () => {
     $('.motherboard').fadeIn(150);
     $('.ProcesadoresAMD, .ProcesadoresIntel, .gpus, .ram, .fuente, .gabinetes').fadeOut(150);
 });
+
 $('#btn-ram').click( () => {
     $('.ram').fadeIn(150);
     $('.ProcesadoresAMD, .ProcesadoresIntel, .gpus, .motherboard, .fuente, .gabinetes').fadeOut(150);
 });
+
 $('#btn-fuente').click( () => {
     $('.fuente').fadeIn(150);
     $('.ProcesadoresAMD, .ProcesadoresIntel, .gpus, .motherboard, .ram, .gabinetes').fadeOut(150);
 });
+
 $('#btn-gabinete').click( () => {
     $('.gabinetes').fadeIn(150);
     $('.ProcesadoresAMD, .ProcesadoresIntel, .gpus, .motherboard, .ram, .fuente').fadeOut(150);
 });
-
-
 
 
 // Función que muestra las cards con los productos disponibles
@@ -134,9 +136,9 @@ const addCarrito = e => {
             toast: true,
             position: 'bottom-end',
             icon: 'success',
-            title: 'Se agregó el producto',
+            title: 'Se agregó al carrito',
             showConfirmButton: false,
-            timer: 1500
+            timer: 2000
         });
     }
     e.stopPropagation();
@@ -159,6 +161,7 @@ const setCarrito = objeto => {
     };
     mostrarCarrito();
 }
+
 
 // Función que pinta el carrito
 const mostrarCarrito = () => {
@@ -204,6 +207,7 @@ const mostrarFooter = () => {
     templateFooter.querySelectorAll(`td`)[0].textContent = nCantidad;
     document.querySelector(`#nav-carrito`).textContent = nCantidad;
     templateFooter.querySelector(`span`).textContent = nPrecio;
+    
 
     const clone = templateFooter.cloneNode(true);
     fragment.append(clone);
@@ -218,6 +222,104 @@ const vaciarCarrito = () => {
     $('#vaciar-carrito').click(() => {
         carrito = {};
         mostrarCarrito();
+    });
+
+    $('#btn-pedido').click(() => {
+        (async () => {
+
+
+        const { value: formValues } = await Swal.fire({
+            title: 'Complete con sus datos',
+            html:
+                `<form id="formulario" name = "formulario-pago">
+
+              <fieldset>
+
+                <legend style="color: #000;"><h2>Ingrese sus datos</h2> </legend>
+            
+                <div class="form__fields">                     
+                  <div class="form__name">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="name" placeholder="Ingrese su nombre" maxlength = "20" required />
+                    <br>
+                    <br>
+                    <label for="apellido">Apellido</label>  
+                    <input type="text" id="apellido" name="lastName" placeholder="Ingrese su apellido" maxlength = "20" required />
+                    <br>
+                    <br>                 
+                  </div>
+
+                  <div class="form__data">
+                    <label for="email">Email</label>                 
+                    <br>
+                    <input type="email" id="email"  name="email" placeholder="Email Address" maxlength = "30" required />
+                    <br>
+                    <br>
+                    <label for="telefono">Teléfono</label>               
+                    <br>
+                    <input type="text" id="telefono" name="telefono" placeholder="Ingrese su número" maxlength = "10" required />                
+                  </div>
+                </div>
+                          
+                <div class="metodos">
+                  <br>
+                  <br>
+                  <label for="metodo" style="font-style: italic; border-bottom: 1px solid black;" ><i class="fas fa-money-check-alt"></i> Método de pago</i></label>
+                  <br>
+                  <br>
+                  <input type="radio" value="tarjeta" id="tarjeta" name="metodo" required>
+                  <label class="mx-2" for="tarjeta"><i class="fas fa-credit-card"></i> Tarjeta de crédito/débito</label>
+                  <br>
+                  <br>
+                  <input type="radio" value="banco" id="banco" name="metodo" required>
+                  <label class="mx-3" for="banco"><i class="fas fa-university"></i> Transferencia bancaria</label>
+                  <br>
+                  <br>
+                </div>
+
+                          
+              </fieldset>
+
+            </form>
+                `,
+            focusConfirm: false,
+            width: '90%',
+            heightAuto: 'false',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            preConfirm: () => {
+                return [
+                document.getElementById('email').value,
+                document.getElementById('Nombre').value
+                ]
+            }
+            })
+
+            if (formValues) {
+            Swal.fire(JSON.stringify(formValues))
+            }
+
+        const {value: accept} = await Swal.fire({
+            title: 'Terms and conditions',
+            input: 'checkbox',
+            inputValue: 1,
+            inputPlaceholder: 'I agree with the terms and conditions',
+            confirmButtonText: 'Continue <i class="fa fa-arrow-right"></i>',
+            width: '90%',
+            heightAuto: 'false',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            inputValidator: (result) => {
+                return !result && 'You need to agree with T&C'
+            }
+        })
+
+
+        if (accept) {
+            Swal.fire('Gracias por comprar en HighGaming :)')
+        }
+
+    })()
     });
 
 }
@@ -246,4 +348,13 @@ const btnAccion = e => {
     e.stopPropagation();
 }
 
-export { mostrarCards, carrito };
+
+
+
+$('#btn-pedido').click(() => {
+        console.log('hola');
+    });
+
+const btnPedido = () => {
+    console.log('hola')
+}

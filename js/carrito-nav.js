@@ -1,5 +1,3 @@
-
-
 const mostrarCarritoNav = () => {
     $('#nav-carrito').html('0');
 
