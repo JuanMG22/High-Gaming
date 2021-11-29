@@ -225,46 +225,41 @@ const vaciarCarrito = () => {
     });
 
     $('#btn-pedido').click(() => {
-        (async () => {
-
-
-        const { value: formValues } = await Swal.fire({
-            title: 'Complete con sus datos',
-            html:
-                `<form id="formulario" name = "formulario-pago">
+        const preloader = document.querySelector(`#loader`);
+        preloader.classList.toggle(`close-loader`);
+        setTimeout(() => {
+                 $('.carrito-titulo').html('Ingrese sus datos')
+        $('.container-carrito').html(`
+        <form id="formulario" name = "formulario-pago">
 
               <fieldset>
-
-                <legend style="color: #000;"><h2>Ingrese sus datos</h2> </legend>
             
-                <div class="form__fields">                     
-                  <div class="form__name">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="name" placeholder="Ingrese su nombre" maxlength = "20" required />
+                <div class="d-flex justify-content-center">                     
+                  <div class="form__name mx-3">
+                    <label class="mx-3" for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="name" placeholder="Tu nombre" maxlength = "20" required />
                     <br>
                     <br>
-                    <label for="apellido">Apellido</label>  
-                    <input type="text" id="apellido" name="lastName" placeholder="Ingrese su apellido" maxlength = "20" required />
+                    <label class="mx-3" for="apellido">Apellido</label>  
+                    <input type="text" id="apellido" name="lastName" placeholder="Tu apellido" maxlength = "20" required />
                     <br>
                     <br>                 
                   </div>
 
-                  <div class="form__data">
-                    <label for="email">Email</label>                 
+                  <div class="mx-3">
+                    <label class="mx-3" for="email">Email</label>                 
+                    <input type="email" id="email"  name="email" placeholder="Email Address" required />
                     <br>
-                    <input type="email" id="email"  name="email" placeholder="Email Address" maxlength = "30" required />
                     <br>
-                    <br>
-                    <label for="telefono">Teléfono</label>               
-                    <br>
-                    <input type="text" id="telefono" name="telefono" placeholder="Ingrese su número" maxlength = "10" required />                
+                    <label class="mx-3" for="telefono">Teléfono</label>               
+                    <input type="text" id="telefono" name="telefono" placeholder="Tu número" maxlength = "10" required />                
                   </div>
                 </div>
                           
-                <div class="metodos">
+                <div class="metodos-pagos text-center">
                   <br>
                   <br>
-                  <label for="metodo" style="font-style: italic; border-bottom: 1px solid black;" ><i class="fas fa-money-check-alt"></i> Método de pago</i></label>
+                  <label for="metodo" ><i class="fas fa-money-check-alt"></i> Métodos de pago</i></label>
                   <br>
                   <br>
                   <input type="radio" value="tarjeta" id="tarjeta" name="metodo" required>
@@ -275,53 +270,46 @@ const vaciarCarrito = () => {
                   <label class="mx-3" for="banco"><i class="fas fa-university"></i> Transferencia bancaria</label>
                   <br>
                   <br>
+                  <button id="btn-siguiente" class="btn btn-dark">Enviar</button>
                 </div>
 
                           
               </fieldset>
 
-            </form>
-                `,
-            focusConfirm: false,
-            width: '90%',
-            heightAuto: 'false',
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            preConfirm: () => {
-                return [
-                document.getElementById('email').value,
-                document.getElementById('Nombre').value
-                ]
-            }
-            })
-
-            if (formValues) {
-            Swal.fire(JSON.stringify(formValues))
-            }
-
-        const {value: accept} = await Swal.fire({
-            title: 'Terms and conditions',
-            input: 'checkbox',
-            inputValue: 1,
-            inputPlaceholder: 'I agree with the terms and conditions',
-            confirmButtonText: 'Continue <i class="fa fa-arrow-right"></i>',
-            width: '90%',
-            heightAuto: 'false',
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            inputValidator: (result) => {
-                return !result && 'You need to agree with T&C'
-            }
-        })
+            </form>`)
+            $('#btn-siguiente').click((e) => {
+                $('#formulario').submit((e)=> {
+    
+                    e.preventDefault()
+                    Swal.fire({
+                        title: `Gracias por comprar ${nombre.value}`,
+                        html: `
+                        <h3 class"text-dark my-3">En breve nos estaremos contactando a ${email.value}</h3>
+                        <a href="./productos.html" id="btn-volver" class="btn btn-dark my-3">Volver</a>
+                        `,
+                        showConfirmButton: false,
+                        icon: 'success',
+                        width: '60%',
+                        allowOutsideClick: false,
+                        allowEscapeKey: false,
+                        allowEnterKey: false
+                    });
+                    $('#btn-volver').click(() => {
+                        carrito = {};
+                        mostrarCarrito();
+                    });
+    
+                })
+            });
+                }, 100);
+        setTimeout(() => {
+                 preloader.classList.toggle(`close-loader`);
+                }, 200);
+        
 
 
-        if (accept) {
-            Swal.fire('Gracias por comprar en HighGaming :)')
-        }
-
-    })()
     });
-
+    
 }
 
 
