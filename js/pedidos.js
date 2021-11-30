@@ -1,62 +1,41 @@
-const mostrarBotonPedido = () => {
-    $('#boton-pedidos').show()
+const mostrarFormularioPago = () => {
+    $('.carrito-titulo').html('Ingrese sus datos')
+            $('.container-carrito').html(`
+            <form id="formulario" name = "formulario-pago">
+            
+                <div class="d-flex justify-content-center">                     
+                  <div class="form__name mx-3">
+                    <label class="mx-3" for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="name" placeholder="Tu nombre" maxlength = "20" required />
+                    <br><br>
+                    <label class="mx-3" for="apellido">Apellido</label>  
+                    <input type="text" id="apellido" name="lastName" placeholder="Tu apellido" maxlength = "20" required />
+                    <br><br>
+                  </div>
+
+                  <div class="mx-3">
+                    <label class="mx-3" for="email">Email</label>                 
+                    <input type="email" id="email"  name="email" placeholder="Email Address" required />
+                    <br><br>
+                    <label class="mx-3" for="telefono">Teléfono</label>               
+                    <input type="text" id="telefono" name="telefono" placeholder="Tu número" maxlength = "10" required />                
+                  </div>
+                </div>
+                          
+                <div class="metodos-pagos text-center">
+                  <br><br>
+                  <label for="metodo" ><i class="fas fa-money-check-alt"></i> Métodos de pago</i></label>
+                  <br><br>
+                  <input type="radio" value="tarjeta" id="tarjeta" name="metodo" required>
+                  <label class="mx-2" for="tarjeta"><i class="fas fa-credit-card"></i> Tarjeta de crédito/débito</label>
+                  <br><br>
+                  <input type="radio" value="banco" id="banco" name="metodo" required>
+                  <label class="mx-3" for="banco"><i class="fas fa-university"></i> Transferencia bancaria</label>
+                  <br><br>
+                  <button id="btn-siguiente" class="btn btn-dark">Enviar</button>
+                </div>
+
+            </form>`)
 }
-const ocultarBotonPedido = () => {
-    $('#boton-pedidos').hide()
-}
 
-$('#btn-pedido').click(() => {
-    (async () => {
-
-
-        const { value: formValues } = await Swal.fire({
-            title: 'Multiple inputs',
-            html:
-                `
-                    <input id="swal-input1" class="swal2-input" type="email" placeholder="Email">
-                    <input id="swal-input2" class="swal2-input">
-                    `,
-            focusConfirm: false,
-            width: '90%',
-            heightAuto: 'false',
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            preConfirm: () => {
-                return [
-                document.getElementById('swal-input1').value,
-                document.getElementById('swal-input2').value
-                ]
-            }
-            })
-
-            if (formValues) {
-            Swal.fire(JSON.stringify(formValues))
-            }
-
-        const {value: accept} = await Swal.fire({
-            title: 'Terms and conditions',
-            input: 'checkbox',
-            inputValue: 1,
-            inputPlaceholder: 'I agree with the terms and conditions',
-            confirmButtonText: 'Continue <i class="fa fa-arrow-right"></i>',
-            width: '90%',
-            heightAuto: 'false',
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            inputValidator: (result) => {
-                return !result && 'You need to agree with T&C'
-            }
-        })
-
-
-        if (accept) {
-            Swal.fire('Gracias por comprar en HighGaming :)')
-        }
-
-    })()
-});
-
-export {
-    mostrarBotonPedido,
-    ocultarBotonPedido
-}
+export { mostrarFormularioPago }

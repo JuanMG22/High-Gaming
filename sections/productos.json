@@ -5,7 +5,7 @@
     "titulo": "Procesador AMD Ryzen 5 2600",
     "categoria": "ProcesadoresAMD",
     "descripcion": "Procesador AMD 6 Núcleos 12 Hilos",
-    "imagen": "../img/cpu-1.jpg"
+    "imagen": "../img/cpus/cpu-1.jpg"
   },
   {
     "precio": 28930,
@@ -13,7 +13,7 @@
     "titulo": "Procesador AMD Ryzen 5 3500X ",
     "categoria": "ProcesadoresAMD",
     "descripcion": "Procesador AMD 6 Núcleos 6 Hilos",
-    "imagen": "../img/cpu-2.jpg"
+    "imagen": "../img/cpus/cpu-2.jpg"
   },
   {
     "precio": 90330,
@@ -21,7 +21,7 @@
     "titulo": "Procesador AMD Ryzen 9 5950X",
     "categoria": "ProcesadoresAMD",
     "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
-    "imagen": "../img/cpu-3.jpg"
+    "imagen": "../img/cpus/cpu-3.jpg"
   },
   {
     "precio": 115780,
@@ -29,7 +29,7 @@
     "titulo": "Procesador AMD Ryzen 9 3950X",
     "categoria": "ProcesadoresAMD",
     "descripcion": "Procesador AMD 16 Núcleos 32 Hilos",
-    "imagen": "../img/cpu-4.jpg"
+    "imagen": "../img/cpus/cpu-4.jpg"
   }
   ,
   {
@@ -38,7 +38,7 @@
     "titulo": "Procesador Intel Core I9-11900k",
     "categoria": "ProcesadoresIntel",
     "descripcion": "Procesador Intel 8 Núcleos 16 Hilos",
-    "imagen": "../img/cpu-5.jpg"
+    "imagen": "../img/cpus/cpu-5.jpg"
   }
   ,
   {
@@ -47,7 +47,7 @@
     "titulo": "Procesador Intel Core I9-10900k",
     "categoria": "ProcesadoresIntel",
     "descripcion": "Procesador Intel 10 Núcleos 20 Hilos",
-    "imagen": "../img/cpu-6.jpg"
+    "imagen": "../img/cpus/cpu-6.jpg"
   }
   ,
   {
@@ -56,7 +56,7 @@
     "titulo": "Procesador Intel Core I7-11700k",
     "categoria": "ProcesadoresIntel",
     "descripcion": "Procesador Intel 8 Núcleos 16 Hilos",
-    "imagen": "../img/cpu-7.jpg"
+    "imagen": "../img/cpus/cpu-7.jpg"
   }
   ,
   {
@@ -65,7 +65,7 @@
     "titulo": "Procesador Intel Core I5-11600k",
     "categoria": "ProcesadoresIntel",
     "descripcion": "Procesador Intel 6 Núcleos 12 Hilos",
-    "imagen": "../img/cpu-8.jpg"
+    "imagen": "../img/cpus/cpu-8.jpg"
   }
   ,
   {
