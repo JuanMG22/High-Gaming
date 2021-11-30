@@ -3,37 +3,40 @@ const mostrarFormularioPago = () => {
             $('.container-carrito').html(`
             <form id="formulario" name = "formulario-pago">
             
-                <div class="d-flex justify-content-center">                     
-                  <div class="form__name mx-3">
-                    <label class="mx-3" for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="name" placeholder="Tu nombre" maxlength = "20" required />
-                    <br><br>
-                    <label class="mx-3" for="apellido">Apellido</label>  
-                    <input type="text" id="apellido" name="lastName" placeholder="Tu apellido" maxlength = "20" required />
-                    <br><br>
-                  </div>
+            <div class="form-floating my-2 mx-1">
+              <input type="text" class="form-control" id="nombre" placeholder="Password" required>
+              <label for="nombre">Nombre</label>
+            </div>
 
-                  <div class="mx-3">
-                    <label class="mx-3" for="email">Email</label>                 
-                    <input type="email" id="email"  name="email" placeholder="Email Address" required />
-                    <br><br>
-                    <label class="mx-3" for="telefono">Teléfono</label>               
-                    <input type="text" id="telefono" name="telefono" placeholder="Tu número" maxlength = "10" required />                
-                  </div>
-                </div>
-                          
-                <div class="metodos-pagos text-center">
-                  <br><br>
-                  <label for="metodo" ><i class="fas fa-money-check-alt"></i> Métodos de pago</i></label>
-                  <br><br>
-                  <input type="radio" value="tarjeta" id="tarjeta" name="metodo" required>
-                  <label class="mx-2" for="tarjeta"><i class="fas fa-credit-card"></i> Tarjeta de crédito/débito</label>
-                  <br><br>
-                  <input type="radio" value="banco" id="banco" name="metodo" required>
-                  <label class="mx-3" for="banco"><i class="fas fa-university"></i> Transferencia bancaria</label>
-                  <br><br>
-                  <button id="btn-siguiente" class="btn btn-dark">Enviar</button>
-                </div>
+            <div class="form-floating my-2 mx-1">
+              <input type="text" class="form-control" id="apellido" placeholder="Password" required>
+              <label for="apellido">Apellido</label>
+            </div>
+            <div class="form-floating my-2 mx-1">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="form-floating my-2 mx-1">
+              <input type="number" class="form-control" id="telefono" placeholder="Password" required>
+              <label for="telefono">Telefono</label>
+            </div>
+
+            <h4 class="d-flex justify-content-center mt-3 text-black-50" ><i class="fas fa-money-check-alt mx-2"></i>Métodos de pago</i></h4>
+            <div class="form-check d-flex justify-content-center my-3  text-black-50">
+              <input class="form-check-input mx-2" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+              <i class="fas fa-credit-card"></i> Tarjeta de crédito/débito
+              </label>
+            </div>
+            <div class="form-check d-flex justify-content-center my-3 text-black-50">
+              <input class="form-check-input mx-2" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+               <i class="fas fa-university"></i> Transferencia bancaria
+              </label>
+            </div>
+            <div class=" d-flex justify-content-center my-3 text-black-50">
+              <button id="btn-siguiente" class="btn btn-dark">Enviar</button>
+            </div>
 
             </form>`)
 }
