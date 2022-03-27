@@ -48,7 +48,7 @@ const fetchData = async () => {
 
 // Función que muestra las cards con los productos disponibles
 const mostrarCards = data => {
-    data.forEach(producto => {
+    data.map(producto => {
         templateCard.querySelector(`.card-title`).textContent = producto.titulo;
         templateCard.querySelector(`.precio-producto`).textContent = producto.precio;
         templateCard.querySelector(`.card-text`).textContent = producto.descripcion;
@@ -164,9 +164,7 @@ const vaciarCarrito = () => {
         preloader.classList.toggle(`close-loader`);
 
         setTimeout(() => {
-
             mostrarFormularioPago()
-
             $('#btn-siguiente').click((e) => {
                 mostrarModalPedido();
             });
